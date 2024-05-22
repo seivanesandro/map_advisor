@@ -11,7 +11,7 @@ body {
 /*TODO: add to styled-components*/
 
 .hero {
-    height: 87vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,9 @@ body {
             rgba(0, 0, 0, 0.4),
             rgba(0, 0, 0, 0.4)
         ),
-        url('./');
+        url('./images/background.jpg');
     object-fit: cover;
     background-repeat: no-repeat;
-    margin: 20px 30px;
 }
 
 .hero-banner {
@@ -34,23 +33,23 @@ body {
 .hero-banner h4 {
     text-transform: uppercase;
     color: #fff;
-    font-size: 30px;
+    font-size: 3.5rem;
     letter-spacing: 0.4rem;
 }
 
 .hero-banner p {
-    max-width: 35rem;
+    max-width: 45rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
     color: #fff;
     letter-spacing: 0.2rem;
-    font-size: 16px;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
-.input-bar {
+/* .input-bar {
     height: 35px;
     width: 100%;
     border-radius: 20px;
@@ -81,4 +80,4 @@ body {
     background-color: transparent;
     color: #fff;
     cursor: pointer;
-}
+} */
