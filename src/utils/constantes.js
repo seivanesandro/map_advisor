@@ -73,19 +73,21 @@ export const devices = {
 };
 
 /* responsive theme ui-material kits
+
+xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px
+
 const theme = createTheme({
     breakpoints: {
         values: {
-            xs: 0,
-            mp:320,
-            mm:375,
-            mg:425,
-            ip: 430,
-            t: 768,
-            lg: 1200,
-            p: 1024,
-            l: 1440,
-            xxl:2560,
+            xs:,
+            sm:,
+            md:,
+            lg:,
+            xl:,
         }
     }
 }); */

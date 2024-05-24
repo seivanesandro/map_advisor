@@ -6,8 +6,12 @@ import {
 } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import {
+    AppBar,
+    Box,
+    Toolbar
+} from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -53,10 +57,10 @@ const StyledInputBase = styled(InputBase)(
             paddingLeft: `calc(1em + ${theme.spacing(4)})`,
             transition:
                 theme.transitions.create('width'),
-            [theme.breakpoints.up('sm')]: {
-                width: '12ch',
+            [theme.breakpoints.up('sm', 'md')]: {
+                width: '60ch',
                 '&:focus': {
-                    width: '20ch'
+                    width: '70ch'
                 }
             }
         }
@@ -68,7 +72,7 @@ const MyButton = styled(Button)({
     color: '#333',
     borderRadius: 18,
     padding: '0.5rem 3rem',
-    marginTop: '5rem !important',
+    marginTop: '1rem !important',
 
     '&:hover': {
         backgroundColor: alpha('#fff', 0.95),
@@ -85,30 +89,47 @@ const Home = props => {
                         <h4 className="hero-title">
                             Travel advisor
                         </h4>
-                        <p>
+                        <p className="hero-description">
                             "The Journey of a
                             thousand miles begins
                             with a single step"
                         </p>
-                        <Stack
-                            spacing={5}
-                            display={'block'}
-                            direction={'column'}
-                            m={'5rem auto'}
+                        <Box
+                            sx={{
+                                flexGrow: 1,
+                                color: 'transparent',
+                                flexDirection:
+                                    'row'
+                            }}
                         >
-                            <Search>
-                                <SearchIconWrapper>
-                                    <SearchIcon />
-                                </SearchIconWrapper>
-                                <StyledInputBase
-                                    placeholder="Search…"
-                                    inputProps={{
-                                        'aria-label':
-                                            'search'
+                            <AppBar
+                                position="static"
+                                sx={{
+                                    bgcolor:
+                                        'transparent'
+                                }}
+                                elevation={0}
+                            >
+                                <Toolbar
+                                    sx={{
+                                        justifyContent:
+                                            'center'
                                     }}
-                                />
-                            </Search>
-
+                                >
+                                    <Search>
+                                        <SearchIconWrapper>
+                                            <SearchIcon />
+                                        </SearchIconWrapper>
+                                        <StyledInputBase
+                                            placeholder="Search…"
+                                            inputProps={{
+                                                'aria-label':
+                                                    'search'
+                                            }}
+                                        />
+                                    </Search>
+                                </Toolbar>
+                            </AppBar>
                             <MyButton
                                 variant="contained"
                                 startIcon={
@@ -118,7 +139,7 @@ const Home = props => {
                             >
                                 Contained
                             </MyButton>
-                        </Stack>
+                        </Box>
                     </div>
                 </div>
             </header>

@@ -20,14 +20,30 @@ body {
             rgba(0, 0, 0, 0.4)
         ),
         url('./images/background.jpg');
-    object-fit: cover;
-    background-repeat: no-repeat;
+    object-fit: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    width: 100%;
 }
+@keyframes smoothShow {
+    0% {
+        opacity: 0;
+    }
 
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 .hero-banner {
     text-align: center;
     padding: 0 3rem;
     color: #fff;
+    animation: smoothShow 1s linear;
 }
 
 .hero-banner h4 {
@@ -47,6 +63,81 @@ body {
     letter-spacing: 0.2rem;
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-banner {
+        padding: 0 0;
+    }
+    .hero-banner h4 {
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+    }
+    .hero-banner p {
+        letter-spacing: 0.1rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .hero-banner {
+        padding: 0 0;
+    }
+    .hero-banner h4 {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+    .hero-banner p {
+        letter-spacing: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .hero-banner {
+        padding: 0 0;
+    }
+    .hero-banner h4 {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+    .hero-banner p {
+        letter-spacing: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .hero-banner {
+        padding: 0 0;
+    }
+    .hero-banner h4 {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+    .hero-banner p {
+        letter-spacing: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .hero-banner {
+        padding: 0 0;
+    }
+    .hero-banner h4 {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+    }
+    .hero-banner p {
+        letter-spacing: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
 }
 
 /* .input-bar {
