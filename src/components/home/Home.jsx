@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 //import PropTypes from 'prop-types'
 import {
     styled,
@@ -81,6 +82,15 @@ const MyButton = styled(Button)({
 });
 
 const Home = props => {
+    const [ name, setName ] = useState('');
+    console.log(name)
+
+    const HandleName = (e) => { 
+        setName(e.target.value)
+    }
+
+    const navigate = useNavigate();
+
     return (
         <div className="Container Home">
             <header className="container-header">
@@ -126,6 +136,9 @@ const Home = props => {
                                                 'aria-label':
                                                     'search'
                                             }}
+                                            onChange={
+                                                HandleName
+                                            }
                                         />
                                     </Search>
                                 </Toolbar>
@@ -136,6 +149,12 @@ const Home = props => {
                                     <SearchIcon />
                                 }
                                 color={'primary'}
+                                onClick={() =>
+                                    navigate(
+                                        '/' +
+                                            name
+                                    )
+                                }
                             >
                                 Contained
                             </MyButton>
