@@ -154,7 +154,7 @@ const Home = props => {
                                     )
                                 }
                             >
-                                Searching
+                                Search place
                             </MyButton>
                         </Box>
                     </div>
