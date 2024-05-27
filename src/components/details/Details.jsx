@@ -22,6 +22,8 @@ const Details = ({ places }) => {
     const params = useParams();
     console.log(places);
 
+    
+
     const longitude = places.lon;
     const latitude = places.lat;
     const [info, setInfo] = useState([]);
