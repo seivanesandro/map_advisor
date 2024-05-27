@@ -154,7 +154,7 @@ const Home = props => {
                                     )
                                 }
                             >
-                                Contained
+                                Searching
                             </MyButton>
                         </Box>
                     </div>
