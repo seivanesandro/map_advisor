@@ -82,12 +82,11 @@ const MyButton = styled(Button)({
 });
 
 const Home = props => {
-    const [ name, setName ] = useState('');
-    console.log(name)
+    const [name, setName] = useState('');
 
-    const HandleName = (e) => { 
-        setName(e.target.value)
-    }
+    const HandleName = e => {
+        setName(e.target.value);
+    };
 
     const navigate = useNavigate();
 
@@ -151,8 +150,7 @@ const Home = props => {
                                 color={'primary'}
                                 onClick={() =>
                                     navigate(
-                                        '/' +
-                                            name
+                                        '/' + name
                                     )
                                 }
                             >
