@@ -39,7 +39,7 @@ const Map = () => {
     }, [longitude, latitude]);
 
     return (
-        <div className="app">
+        <div className="appAdvisor">
             <div id="map" className='map'/>
             <div className="search-bar">
                 <input

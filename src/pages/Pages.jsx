@@ -14,6 +14,7 @@ const Pages = props => {
             />
             <Route
                 path="/:name"
+                and
                 element={<Main />}
             />
         </Routes>
