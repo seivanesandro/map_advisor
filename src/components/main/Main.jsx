@@ -5,14 +5,10 @@ import React, {
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Details from '../details/Details';
-import styled from 'styled-components';
+
 
 //import PropTypes from 'prop-types'
 
-const ContainerMain = styled.div`
-    background: #3300ff;
-    height: 100%;
-`;
 
 const apiURL = process.env.REACT_APP_API_URL_MAIN;
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -37,9 +33,9 @@ const Main = () => {
     }, [params.name]);
 
     return (
-        <ContainerMain className="container-main">
+        <div className="container-main">
             <Details places={places} />
-        </ContainerMain>
+        </div>
     );
 };
 

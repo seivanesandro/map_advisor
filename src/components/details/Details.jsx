@@ -9,10 +9,12 @@ import {
     Box,
     Paper,
     Stack,
+    Typography
 } from '@mui/material';
 import { Place } from '@mui/icons-material';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import TourIcon from '@mui/icons-material/Tour';
+import Map from '../map/Map';
 
 const apiURLInfo =
     process.env.REACT_APP_API_URL_INFO;
@@ -21,8 +23,6 @@ const apiKey = process.env.REACT_APP_API_KEY;
 const Details = ({ places }) => {
     const params = useParams();
     console.log(places);
-
-    
 
     const longitude = places.lon;
     const latitude = places.lat;
@@ -46,123 +46,125 @@ const Details = ({ places }) => {
 
     //console.log(info);
     return (
-        <Box
-            sx={{
-                margin: 5,
-                background: '#3300FF'
-            }}
-        >
-            <Stack
-                spacing={2}
-                justifyContent={'space-between'}
-            >
-                <Box flex={5}>
-                    {/* <Map /> */}
-                </Box>
+        <>
+            <Box sx={{ margin: 5 }}>
                 <Stack
-                    direction={'row'}
                     spacing={2}
                     justifyContent={
                         'space-between'
                     }
                 >
-                    <Box flex={2}>
+                    <Box flex={5}>
+                        <Map />
+                    </Box>
+                    <Stack
+                        direction={'row'}
+                        spacing={2}
+                        justifyContent={
+                            'space-between'
+                        }
+                    >
+                        <Box flex={2} />
                         <Box
+                            flex={5}
                             sx={{
-                                display: 'flex',
-                                flexDirection:
-                                    'column',
-                                gap: '2rem',
-                                padding: '10px',
-                                background:
-                                    '#3300FF'
+                                background:  'rgb(61,61,61)',gap: 5,
                             }}
                         >
                             {info.map(item => {
                                 return (
-                                    <div
-                                        className="container-list"
-                                        key={
-                                            item.id
-                                        }
-                                        style={{
-                                            padding:
-                                                '1px',
-                                            display:
-                                                'flex',
-                                            flexDirection:
-                                                'column',
-                                            gap: '13rem'
-                                        }}
-                                    >
+                                    <>
                                         <Paper
                                             sx={{
-                                                padding:
-                                                    '2rem',
-                                                background:
-                                                    '#CCE5FF',
-                                                display:
-                                                    'flex',
-                                                flexDirection:
-                                                    'column',
-                                                gap: '1.5rem',
-                                                flexWrap:
-                                                    ' wrap',
-                                                alignContent:
-                                                    'center',
-                                                alignItems:
-                                                    'center'
+                                                padding: 3,
+                                                margin: 2,
+                                                backgroundColor:
+                                                    'rgb(255,255,255)',
+                                                    gap: 4,
                                             }}
                                         >
-                                            <h4>
-                                                <Place />
+                                            <Typography
+                                                variant="h5"
+                                                gutterBottom
+                                                className="card-item"
+                                            >
+                                                <Place />{' '}
                                                 {
                                                     item
                                                         .properties
                                                         .name
                                                 }
-                                            </h4>
-                                            <h4>
+                                            </Typography>
+                                            <Typography
+                                                variante="body2"
+                                                component="p"
+                                                className="card-item"
+                                            >
                                                 <ArchitectureIcon />{' '}
+                                                <strong>
+                                                    Dist:
+                                                </strong>
                                                 {
                                                     item
                                                         .properties
                                                         .dist
                                                 }
-                                                m
-                                            </h4>
-                                            <h4>
-                                                <TourIcon />
-                                                {
-                                                    item
-                                                        .properties
-                                                        .kinds
-                                                }
-                                            </h4>
-                                            <h4>
-                                                longitude:{' '}
+                                                m{' '}
+                                                <strong>
+                                                    {' '}
+                                                    Long:
+                                                </strong>
                                                 {
                                                     item
                                                         .geometry
                                                         .coordinates[0]
                                                 }
                                                 ,{' '}
-                                                latitude:
+                                                <strong>
+                                                    Lat:
+                                                </strong>
                                                 {
                                                     item
                                                         .geometry
                                                         .coordinates[1]
                                                 }
-                                            </h4>
+                                            </Typography>
+
+                                            <Typography
+                                                variante="body2"
+                                                component="p"
+                                                className="card-item"
+                                            >
+                                                <TourIcon />{' '}
+                                                <strong style={{letterSpacing: '4px'}}>
+                                                    {
+                                                        item
+                                                            .properties
+                                                            .kinds
+                                                    }
+                                                </strong>
+                                            </Typography>
+                                            {/* <Button
+                                                variante="contained"
+                                                color="primary"
+                                                className="card-btn"
+                                                disable={
+                                                    true
+                                                }
+                                            >
+                                                Saiba
+                                                mais
+                                            </Button> */}
                                         </Paper>
-                                    </div>
+                                    </>
                                 );
                             })}
                         </Box>
-                    </Box>
+                        <Box flex={2} />
+                    </Stack>
                 </Stack>
-            </Stack>
-        </Box>
+            </Box>
+        </>
     );
 };
 
