@@ -1,4 +1,5 @@
 {
+    "homepage": "https://seivanesandro.github.io/map_advisor",
     "name": "map_advisor",
     "version": "0.1.0",
     "private": true,
@@ -13,6 +14,7 @@
         "@testing-library/user-event": "^13.5.0",
         "@tomtom-international/web-sdk-maps": "^6.25.0",
         "axios": "^1.7.1",
+        "gh-pages": "^6.1.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.23.1",
@@ -22,6 +24,8 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
