@@ -18,7 +18,7 @@ const Map = () => {
             key: 'oWtPW4V2d9nDSoeZvTzrvCtrRMBWH5MG',
             container: 'map',
             center: [longitude, latitude],
-            zoom: 20,
+            zoom: 12,
         });
 
         setMap(map);
