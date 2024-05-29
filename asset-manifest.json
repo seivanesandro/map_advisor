@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/map_advisor/static/css/main.78b0f8b8.css",
-    "main.js": "/map_advisor/static/js/main.179cefdf.js",
+    "main.css": "/map_advisor/static/css/main.bd6a4b55.css",
+    "main.js": "/map_advisor/static/js/main.dfa9f718.js",
     "static/js/453.90a49ba9.chunk.js": "/map_advisor/static/js/453.90a49ba9.chunk.js",
     "static/media/background.jpg": "/map_advisor/static/media/background.4f963b5c2267182b2aae.jpg",
     "index.html": "/map_advisor/index.html",
-    "main.78b0f8b8.css.map": "/map_advisor/static/css/main.78b0f8b8.css.map",
-    "main.179cefdf.js.map": "/map_advisor/static/js/main.179cefdf.js.map",
+    "main.bd6a4b55.css.map": "/map_advisor/static/css/main.bd6a4b55.css.map",
+    "main.dfa9f718.js.map": "/map_advisor/static/js/main.dfa9f718.js.map",
     "453.90a49ba9.chunk.js.map": "/map_advisor/static/js/453.90a49ba9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78b0f8b8.css",
-    "static/js/main.179cefdf.js"
+    "static/css/main.bd6a4b55.css",
+    "static/js/main.dfa9f718.js"
   ]
 }
