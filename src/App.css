@@ -1,21 +1,21 @@
 .appAdvisor {
     height: 100%;
     width: 100%;
+    background: rgb(255,255,255);
+    padding: 0 0 1rem 0 ;
 }
 
 .map {
     height: 150%;
     width: 100%;
-    border: 1px solid black;
-    box-shadow: 0 0 0.5rem black;
+    margin-bottom: 3rem;
 }
 
-.marker {
-    background-image: url('https://i.imgur.com/oz3r3Wq.png');
-    background-size: cover;
-    width: 22px;
-    height: 22px;
-    background-color: yellow;
-    border-radius: 11px;
-    border: solid 3px darkslategray;
+.paper-style {
+    background: rgb(255,255,255) !important;
+}
+
+.paper-style:hover{
+    background: #CCE5FF !important;
+    box-shadow: 0 0 5px rgb(255,255,255);
 }

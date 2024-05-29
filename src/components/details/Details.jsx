@@ -6,18 +6,54 @@ import React, {
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import {
-    Box,
     Paper,
-    Stack,
     Typography
 } from '@mui/material';
 import { Place } from '@mui/icons-material';
-import ArchitectureIcon from '@mui/icons-material/Architecture';
-import TourIcon from '@mui/icons-material/Tour';
 import Map from '../map/Map';
+import styled from 'styled-components';
+import {devices} from '../../utils/constantes'
 
-const apiURLInfo =
-    process.env.REACT_APP_API_URL_INFO;
+const ContainerDetails = styled.div`
+    background: #3300ff;
+`;
+const MainDetails = styled.div`
+`;
+
+const ContainerItems = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1rem 58rem;
+
+    @media only screen and (${devices.fourk}) {
+        padding: 74px 34rem;
+    }
+    @media only screen and (${devices.portatilL}) {
+        padding: 74px 10rem;
+    }
+    @media only screen and (${devices.portatil}) {
+        padding: 74px 5rem;
+    }
+    @media only screen and (${devices.tablet}) {
+        padding: 74px 5rem;
+    }
+    @media only screen and (${devices.iphone14}) {
+        padding: 74px 0;
+    }
+    @media only screen and (${devices.mobileG}) {
+        padding: 74px 0;
+    }
+    @media only screen and (${devices.mobileM}) {
+        padding: 74px 0;
+    }
+    @media only screen and (${devices.mobileP}) {
+        padding: 74px 0;
+    }
+`;
+
+const apiURLInfo = process.env.REACT_APP_API_URL_INFO;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 const Details = ({ places }) => {
@@ -47,123 +83,119 @@ const Details = ({ places }) => {
     //console.log(info);
     return (
         <>
-            <Box sx={{ margin: 5 }}>
-                <Stack
-                    spacing={2}
-                    justifyContent={
-                        'space-between'
-                    }
-                >
-                    <Box flex={5}>
+            <ContainerDetails className="container-Details">
+                <MainDetails className="main-Details">
+                    <div className='container-map'>
                         <Map />
-                    </Box>
-                    <Stack
-                        direction={'row'}
-                        spacing={2}
-                        justifyContent={
-                            'space-between'
-                        }
-                    >
-                        <Box flex={2} />
-                        <Box
-                            flex={5}
-                            sx={{
-                                background:  'rgb(61,61,61)',gap: 5,
-                            }}
-                        >
-                            {info.map(item => {
-                                return (
-                                    <>
-                                        <Paper
+                    </div>
+                    <ContainerItems className='container-items'>
+                        {info.map(item => {
+                            return (
+                                <>
+                                    <Paper
+                                        className="paper-style"
+                                        elevation={
+                                            2
+                                        }
+                                        sx={{
+                                            padding: 4,
+                                            margin: 2,
+                                            textAlign:
+                                                {
+                                                    xs: 'start',
+                                                    sm: 'start',
+                                                    md: 'center',
+                                                    lg: 'center',
+                                                    xl: 'center'
+                                                }
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="h6"
+                                            gutterBottom
+                                            className="item"
                                             sx={{
-                                                padding: 3,
-                                                margin: 2,
-                                                backgroundColor:
-                                                    'rgb(255,255,255)',
-                                                    gap: 4,
+                                                marginBottom:
+                                                    '0.5rem',
+                                                fontSize:
+                                                    {
+                                                        xs: '1.1rem',
+                                                        sm: '1.2rem',
+                                                        md: '1.3rem',
+                                                        lg: '1.4rem',
+                                                        xl: '1.5rem'
+                                                    }
                                             }}
                                         >
-                                            <Typography
-                                                variant="h5"
-                                                gutterBottom
-                                                className="card-item"
-                                            >
-                                                <Place />{' '}
-                                                {
-                                                    item
-                                                        .properties
-                                                        .name
-                                                }
-                                            </Typography>
-                                            <Typography
-                                                variante="body2"
-                                                component="p"
-                                                className="card-item"
-                                            >
-                                                <ArchitectureIcon />{' '}
-                                                <strong>
-                                                    Dist:
-                                                </strong>
-                                                {
-                                                    item
-                                                        .properties
-                                                        .dist
-                                                }
-                                                m{' '}
-                                                <strong>
-                                                    {' '}
-                                                    Long:
-                                                </strong>
-                                                {
-                                                    item
-                                                        .geometry
-                                                        .coordinates[0]
-                                                }
-                                                ,{' '}
-                                                <strong>
-                                                    Lat:
-                                                </strong>
-                                                {
-                                                    item
-                                                        .geometry
-                                                        .coordinates[1]
-                                                }
-                                            </Typography>
-
-                                            <Typography
-                                                variante="body2"
-                                                component="p"
-                                                className="card-item"
-                                            >
-                                                <TourIcon />{' '}
-                                                <strong style={{letterSpacing: '4px'}}>
-                                                    {
-                                                        item
-                                                            .properties
-                                                            .kinds
-                                                    }
-                                                </strong>
-                                            </Typography>
-                                            {/* <Button
-                                                variante="contained"
-                                                color="primary"
-                                                className="card-btn"
-                                                disable={
-                                                    true
-                                                }
-                                            >
-                                                Saiba
-                                                mais
-                                            </Button> */}
-                                        </Paper>
-                                    </>
-                                );
-                            })}
-                        </Box>
-                        <Box flex={2} />
-                    </Stack>
-                </Stack>
-            </Box>
+                                            <Place />{' '}
+                                            {
+                                                item
+                                                    .properties
+                                                    .name
+                                            }
+                                        </Typography>
+                                        <Typography
+                                            variante="body2"
+                                            component="p"
+                                            className="item"
+                                            sx={{
+                                                marginBottom:
+                                                    '0.5rem'
+                                            }}
+                                        >
+                                            <strong>
+                                                Distance:{' '}
+                                            </strong>
+                                            {
+                                                item
+                                                    .properties
+                                                    .dist
+                                            }
+                                            m{' '}
+                                        </Typography>
+                                        <Typography
+                                            variante="body2"
+                                            component="p"
+                                            className="item"
+                                            sx={{
+                                                marginBottom:
+                                                    '0.5rem'
+                                            }}
+                                        >
+                                            <strong>
+                                                Longitude:{' '}
+                                            </strong>
+                                            {
+                                                item
+                                                    .geometry
+                                                    .coordinates[0]
+                                            }
+                                        </Typography>
+                                        <Typography
+                                            variante="body2"
+                                            component="p"
+                                            className="item"
+                                            sx={{
+                                                marginBottom:
+                                                    '0.5rem'
+                                            }}
+                                        >
+                                            <strong>
+                                                Latitude:{' '}
+                                            </strong>
+                                            {
+                                                item
+                                                    .geometry
+                                                    .coordinates[1]
+                                            }
+                                        </Typography>
+                                    </Paper>
+                                </>
+                            );
+                        })}
+                    </ContainerItems>
+                </MainDetails>
+            </ContainerDetails>
         </>
     );
 };

@@ -6,9 +6,13 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Details from '../details/Details';
 
-
+import styled from 'styled-components';
 //import PropTypes from 'prop-types'
 
+const ContainerMain = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
 
 const apiURL = process.env.REACT_APP_API_URL_MAIN;
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -33,9 +37,9 @@ const Main = () => {
     }, [params.name]);
 
     return (
-        <div className="container-main">
+        <ContainerMain className="container-main">
             <Details places={places} />
-        </div>
+        </ContainerMain>
     );
 };
 
