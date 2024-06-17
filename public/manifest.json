@@ -1,6 +1,6 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "Map_advisor_app",
+    "name": "My Map Advisor Search application",
     "icons": [
         {
             "src": "favicon.ico",
